@@ -1,8 +1,10 @@
 from db import get_db_connection
-from functions.users.post_user import post_user
-from functions.users.get_users import get_users
+from functions.transactions.post_transaction import post_transaction
+from functions.categories.post_category import post_category
+from functions.transactions.get_transactions import get_transactions
 
 
 db_connection = get_db_connection()
 
-get_users(db_connection)
+post_transaction(db_connection, 1, 1, 25, 'payment', 'Bought McDonalds')
+get_transactions(db_connection)
